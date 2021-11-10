@@ -1,0 +1,71 @@
+Сколько животных?\
+animals = ["dog", "cat", "bat", "cock", "cow", "pig",
+           "fox", "ant", "bird", "lion", "wolf", "deer", "bear",
+           "frog", "hen", "mole", "duck", "goat"]
+def count_animals(txt):
+    counts = []
+    def f(t, c):
+        for a in animals:
+            s = t
+            for x in a: s = s.replace(x, "", 1)
+            if len(s) + len(a) == len(t): f(s, c + 1)
+        counts.append(c)
+    f(txt, 0)
+    return max(counts)
+
+a=10
+for i in range(1, 10):
+    if a >= 5:
+        print('Число больше пяти')
+    else:
+        print('Число меньше пяти')
+Эмоджи
+print("\U0001f600")
+
+print("\U0001F606")
+
+print("\U0001F923")
+Пятница 13
+import calendar
+def how_unlucky(y):
+    return sum(calendar.weekday(y, m, 13) == 4 for m in range(1, 13))
+Викторина
+ls = [
+    ("Москва-столица России?", "да"),
+    ("На свете существуют единороги?", "нет"),
+    ("Гарри Поттера играл Питер Паркер?", "нет"),
+]
+ 
+for q, a in ls:
+    print(q, '[да/нет]')
+    answer = input().strip().lower()
+    if answer == a:
+        print("правильный ответ")
+    else:
+        print("неправильный ответ")
+from datetime import datetime
+import bisect
+tdays = [19,49,80,110,141,173,204,
+          235,256,296,327,356,366]
+zod =["Capricorn","Aquarius","Pisces","Aries",
+    "Taurus","Gemini","Crayfish","Leo",
+        "Virgo","Libra","Scorpio",
+        "Sagittarius","Capricorn"]
+d, m = map(int,input().split())
+print(zod[bisect.bisect_left
+         (tdays,(datetime(2020, m, d) - 
+                 datetime(2019,12,31)).days)])
+Сколько лет прошло с ВОВ?
+a=int(input('Какой сейчас год? '))
+b=1945
+print(a - b, 'прошло после победы в ВОВ.')
+Определение погоды
+a=int(input('Какая сегодня температура на улице?'))
+if a >= 25:
+    print('Жарко')
+elif 17 <= a < 25:
+    print('Тепло')
+elif 10 <= a < 17:
+    print('Прохладно')
+else:
+    print('Холодно')
